@@ -1,0 +1,24 @@
+Considérese el lenguaje sobre el alfabeto \( \{ a,b \} \) que tan solo contiene a la cadena \textit{a}.
+
+\begin{enumerate}[a)]
+  \item Construye un autómata determinista finito que reconozca este lenguaje y rechace todos aquellas cadenas que no pertenezcan al lenguaje.
+
+    \begin{center}
+      \begin{tikzpicture}[auto,
+          shorten > = 1pt, 
+      node distance = 4cm and 3cm]
+      \node[state] (q0) {$q_0$};
+      \node[inner sep=0pt,outer sep=-1pt,left=0pt of q0.west]{$>$};
+      \node[state,accepting] (q2) [right of=q0] {$q_2$};
+      \node[state] (q1) [below of=q2] {$q_1$};
+      \path[->] (q0) edge node {$a$} (q2)
+                     edge node {$b$} (q1)
+                (q1) edge [loop below] node {$b$} ()
+                     edge [loop right] node {$a$} ()
+                (q2) edge node {$a$ $b$} (q1);
+      \end{tikzpicture}
+    \end{center}
+
+  \item Pruebe el autómata que ha creado introduciendo 6 cadenas.
+
+\end{enumerate}
