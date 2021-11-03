@@ -2,6 +2,26 @@ Considérese el lenguaje sobre el alfabeto \( \{ a,b \} \) que tan solo contiene
 
 \begin{enumerate}[a)]
   \item Construye un autómata determinista finito que reconozca este lenguaje y rechace todos aquellas cadenas que no pertenezcan al lenguaje.
+    
+    Sea \( M=(\{q_0,q_1,q_2\}, \{a,b\}, \delta, q_0, \{q_2\}) \) un autómata finito determinista con:
+
+    \vspace{1cm}
+
+    \begin{center}
+      \begin{tabular}{|c|c|c|}
+        \hline
+        $\delta(q,\sigma)$ & $a$ & $b$\\
+        \hline
+        $q_0$& $q_0$ & $q_1$\\
+        \hline
+        $q_1$& $q_2$ & $q_1$\\
+        \hline
+        $q_2$& $q_2$ & $q_0$\\
+        \hline
+      \end{tabular}
+    \end{center}
+
+    \vspace{1cm}
 
     \begin{center}
       \begin{tikzpicture}[auto,
@@ -20,5 +40,7 @@ Considérese el lenguaje sobre el alfabeto \( \{ a,b \} \) que tan solo contiene
     \end{center}
 
   \item Pruebe el autómata que ha creado introduciendo 6 cadenas.
+
+    \includegraphics*[width = 0.8\columnwidth]{images/automata3.png}
 
 \end{enumerate}
